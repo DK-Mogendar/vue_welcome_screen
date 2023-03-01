@@ -20,7 +20,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22");
 
 body{
-background-color:#E5E5E5;
+background-color:#e8eff4;
 }
 #app {
   font-family: "inter", Arial, Helvetica, sans-serif;

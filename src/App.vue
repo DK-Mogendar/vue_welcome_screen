@@ -16,11 +16,14 @@ export default {
 </script>
 
 <style>
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22");
+
 body{
 background-color:#E5E5E5;
 }
 #app {
+  font-family: "inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align:start;
@@ -69,16 +72,18 @@ background-color:#E5E5E5;
   }
 
 .footer {
-    background-color: white;
-  }
-.flex-container {
   display: flex;
-}
-
-.flex-container img {
-  flex-basis: 100%;
-  max-width: 33%;
-  height: auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  background: #FFFFFF;
+  }
+.footer img {
+  height: 50px;
 }
 
 </style>

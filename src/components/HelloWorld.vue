@@ -39,13 +39,13 @@
 
   
 
-    <footer class="">
+    <footer class="footer">
 
-      <div class="flex-container">
+    
         <img src="../assets/STZH_SEB_Logo.png" alt="Bild 1">
         <img src="../assets//Opportunity.png" alt="Bild 2">
         <img src="../assets/SAG_Logo_De.png" alt="Bild 3">
-      </div>
+
      </footer>
 </template>
 

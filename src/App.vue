@@ -26,20 +26,24 @@ background-color:#E5E5E5;
   font-family: "inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align:start;
-
+  color: #323d4a;
   margin-top: 60px;
 }
-.titel {
-    margin: 30px;
-    padding: 20px;
-    font-weight:500;
-    font-Size:28px;
-    line-height:36px;
-    Font:Inter;
-    font-Weight:900;
-    Size:28px;
-    Line-height:36px;
+.header {
+  margin: 30px;
+}
+.title {
+  font-size: 62px;
+  font-weight: 900;
+  margin: 80px 0 20px 0;
+}
+
+.untertitel{
+  font-size: 62px;
+  color: #9aa7b1;
+  font-weight: 500;
+  margin: 0;
+  
 }
 .app {
     margin: 30px;

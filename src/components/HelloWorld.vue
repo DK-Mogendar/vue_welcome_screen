@@ -2,7 +2,7 @@
   
 
     
-    <header>
+   <header class="header">
       <div class="titel">
         <h1 class="t1">{{ msg }}</h1>
         <h1 class="t2">01.03.2023</h1>

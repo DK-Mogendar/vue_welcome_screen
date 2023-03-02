@@ -5,8 +5,8 @@
 
     <!-- entry list -->
     <ul v-if="entries" class="entry-list" >
-      <li v-for="entry in entries" class="entry-item"  :key="entry.id">
-        <span class="entry-daytime">02/03/2023 {{entry[1] }} {{entry[0] }} Uhr</span><br />
+      <li v-for="entry in entries && entries.length" class="entry-item"  :key="entry.id">
+        <span class="entry-daytime">{{entry[0] }} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
         <h3 class="entry-title">{{ entry[2]}}</h3>
         <span class="entry-description">{{ entry[3]}}</span><br />
       </li>
@@ -34,24 +34,39 @@
 </template>
 
 <script>
+import axios from "axios"; //axios is a libary for making HTTP rquest to the backend
+
 
 export default {
   name: "App",
   data() {
     return {
       title: "Welcome to Opportunity",
+      sheet_id:"1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
+      api_token:"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
       currentDate: "",
       entries: []
     };
   },
 
+  computed: {
+    // computed properties are like data properties, but with a method combined and it gets executed automatically, instead of calling a function explicitly
+    gsheet_url() {
+      return `https://sheets.googleapis.com/v4/spreadsheets/${this.sheet_id}/values:batchGet?ranges=A2%3AE100&valueRenderOption=FORMATTED_VALUE&key=${this.api_token}`;
+    },
+  },
+
   methods: {
     getData() {
-      this.entries =  [
+        axios.get(this.gsheet_url).then((response) => {
+          this.entries = response.data.valueRanges[0]. values;
+        });
+
+     /* this.entries =  [
         ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
         ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
         ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
-      ];
+      ];*/
     },
     updateCurrentDate() {
       let today = new Date();
@@ -65,7 +80,7 @@ export default {
   },
   mounted() {
     this.refreshData(); // get first initial data and then wait for the next
-    setInterval(this.refreshData, 60000); // wait one minute for next update (1000 * 60)
+    setInterval(this.refreshData, 18000000); // wait one minute for next update (1000 * 60)
   },
 };
 </script>
@@ -84,14 +99,14 @@ background-color:#e8eff4;
   color: #323d4a;
   margin-top: 60px;
 }
-.header {
-  margin: 30px;
-}
+
 .site-title {
+
   color: black;
   font-size: 62px;
   font-weight: 900;
   margin: 80px 0 20px 0;
+
 }
 
 .site-description{
@@ -102,7 +117,7 @@ background-color:#e8eff4;
   margin: 0;
   
 }
-.entrie {
+.entry-list {
     margin: 30px;
     padding: 20px;
     background-color: rgb(34, 13, 109); 

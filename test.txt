@@ -1,0 +1,94 @@
+#hw {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+
+}
+
+body {
+  color: #E5E5E5;
+}
+
+h1 {
+  margin-left: 60px;
+
+  text-align: left;
+  font-weight: 900;
+  font-size: 62px;
+  left: 60px;
+
+  color: #323D4A;
+}
+
+h2 {
+  margin-left: 60px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 62px;
+
+  color: #9AA7B1;
+}
+
+h4 {
+  margin-left: 60px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 62px;
+
+  color: #0F05A0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  width: 900px;
+  height: 112px;
+
+  padding: 37px;
+  margin: 20px;
+
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 10px;
+
+  text-align: left;
+  background-color: #0F05A0;
+}
+
+#kurs-time {
+  color: #EB5E00;
+}
+
+#kurs-titel {
+  color: #FFBFAB;
+}
+
+#kurs-desciption {
+  color: #FFBFAB;
+}
+
+footer {
+  background-color: white;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-item {
+  flex-basis: calc(33.33% - 20px);
+  text-align: center;
+}
+
+.footer-item img {
+  max-width: 100%;
+}
+</style>

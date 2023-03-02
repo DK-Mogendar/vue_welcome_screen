@@ -99,7 +99,7 @@ background-color:#e8eff4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #323d4a;
-  margin: 60px;
+  margin: 30px;
 }
 
 .site-title {

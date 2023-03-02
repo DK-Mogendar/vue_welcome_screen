@@ -4,8 +4,8 @@
     <span class="site-description">{{ currentDate }}</span>
 
     <!-- entry list -->
-    <ul v-if="entries" class="entry-list" >
-      <li v-for="entry in entries && entries.length" class="entry-item"  :key="entry.id">
+    <ul v-if="entries && entries.length" class="entry-list" >
+      <li v-for="entry in entries" class="entry-item"  :key="entry.id">
         <span class="entry-daytime">{{entry[0] }} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
         <h3 class="entry-title">{{ entry[2]}}</h3>
         <span class="entry-description">{{ entry[3]}}</span><br />
@@ -58,15 +58,17 @@ export default {
 
   methods: {
     getData() {
+      
         axios.get(this.gsheet_url).then((response) => {
           this.entries = response.data.valueRanges[0]. values;
         });
+     
 
-     /* this.entries =  [
+/*      this.entries =  [
         ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
         ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
         ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
-      ];*/
+      ]; */
     },
     updateCurrentDate() {
       let today = new Date();
@@ -156,4 +158,4 @@ background-color:#e8eff4;
   height: 50px;
 }
 
-</style>
+</style>§

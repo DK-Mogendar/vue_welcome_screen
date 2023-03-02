@@ -1,6 +1,28 @@
 <template>
   
+  <!--mane: "App",
+    data(){
+      return {
+        titel: "Welcoome",
+        currentDate: "",
+        entries:[],
+        counter: 0
+      };
+    },
 
+    methods: {
+        getData() {
+        },
+        updateCurrentDate() {
+          let today = new Date();
+          
+          this.currentDate = `${today.getDate()}.${today.getMonth()+1}.${today.getFullYear()} - ${this.counter}`;
+        },
+        refreshData(){
+          this.updateCurrentDate();
+          this.getData();
+      },
+    },-->
     
    <header class="header">
       <div class="titel">

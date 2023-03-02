@@ -99,50 +99,51 @@ background-color:#e8eff4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #323d4a;
-  margin-top: 60px;
+  margin: 60px;
 }
 
 .site-title {
-
-  color: black;
   font-size: 62px;
   font-weight: 900;
   margin: 80px 0 20px 0;
-
 }
 
 .site-description{
-  color:#9AA7B1;
   font-size: 62px;
   color: #9aa7b1;
   font-weight: 500;
   margin: 0;
+
   
 }
 .entry-list {
-    margin: 30px;
-    padding: 20px;
-    background-color: rgb(34, 13, 109); 
-    color: aliceblue;
-    font-weight:500;
-    font-Size:28px;
-    line-height:36px;
-    Font:Inter;
-    font-Weight:900;
-    Size:28px;
-    Line-height:36px;
-  }
-.farbe1 {
-    color:#EB5E00;
-  }
-.farbe2 {
-    color:#FFBFAB;
-  }
-.farbe3 {
-    color:#FFBFAB;
-  }
+  padding-left: 0;
+}
 
+.entry-item {
+  padding: 35px 40px;
+  margin: 40px 0;
+  background: #0f05a0;
+  font-size: 28px;
+  line-height: 1.3;
+  list-style: none;
+}
 
+.entry-daytime {
+  color: #eb5e00;
+  font-weight: 900;
+}
+
+.entry-title {
+  font-size: inherit;
+  margin: 0;
+  color: #ffbfab;
+  font-weight: 900;
+}
+
+.entry-description {
+  color: #ffbfab;
+}
 .footer {
   display: flex;
   justify-content: space-between;

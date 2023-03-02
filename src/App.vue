@@ -50,7 +50,7 @@ export default {
       this.entries =  [
         ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
         ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
-        ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"]
+        ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
       ];
     },
     updateCurrentDate() {

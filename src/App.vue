@@ -51,7 +51,12 @@ export default {
   },
 
   computed: {
-    // computed properties are like data properties, but with a method combined and it gets executed automatically, instead of calling a function explicitly
+    /*Dieser Code definiert eine Eigenschaft gsheet_url, die eine URL zurückgibt, die auf eine bestimmte Tabelle 
+    in einer Google Sheets-Datei verweist. Die URL wird mit den Informationen sheet_id und api_token generiert, 
+    die von der Klasse verwendet werden, in der sich dieser Code befindet.
+    (ChrisBeschreibung).
+    Berechnete Eigenschaften sind wie Dateneigenschaften, 
+    aber mit einer kombinierten Methode, die automatisch ausgeführt wird, anstatt explizit eine Funktion aufzurufen. */
     gsheet_url() {
       return `https://sheets.googleapis.com/v4/spreadsheets/${this.sheet_id}/values:batchGet?ranges=A2%3AE100&valueRenderOption=FORMATTED_VALUE&key=${this.api_token}`;
     },

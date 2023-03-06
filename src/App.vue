@@ -4,6 +4,7 @@
     <span class="site-description">{{ currentDate }}</span>
 
     <!-- entry list -->
+    <!---->
     <ul v-if="entries && entries.length" class="entry-list" >
       <li v-for="entry in entries" class="entry-item"  :key="entry.id">
         <span class="entry-daytime">{{entry[0] }} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
@@ -12,10 +13,11 @@
       </li>
     </ul>
 
-    <!--Text wird nur angezeigt wenn keine einträge vorhanden-->
+    <!--Text wird nur angezeigt wenn keine einträge vorhanden.-->
     <h1 v-else>Keine Events zur Zeit vorhanden!</h1>
 
     <!-- footer -->
+    <!--Enthält nur drei bilder die im Footer angezeigt werden.-->
     <footer class="footer">
       <img
         src="./assets/STZH_SEB_Logo.png"
@@ -43,8 +45,8 @@ export default {
     return {
       title: "Welcome to Opportunity",
                     /*Meine Liste */                                         /*Chris Liste */
-      sheet_id:/*"1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc" */ "1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
-      api_token:/*"AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE"*/"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
+      sheet_id:"1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc"/*"1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4"*/,
+      api_token:"AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE"/*"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU"*/,
       currentDate: "",
       entries: []
     };
@@ -135,7 +137,7 @@ background-color:#e8eff4;
   font-family: "inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #323d4a;
+  /*color: #323d4a;*/
   margin: 30px;
 }
 

@@ -1,15 +1,29 @@
 <template>
-  <div id="app">
-    <h1 class="site-title">{{ title }}</h1>
-    <span class="site-description">{{ currentDate }}</span>
+  <div id="app"> <!--Uebergeortneter Div über das gesamte Template (wird genutzt um übergeortnete css Styles zu vergeben)-->
+    <h1 class="site-title">{{ title }}</h1> <!--Gibt den Titel aus-->
+    <span class="site-description">{{ currentDate }}</span><!--Gibt das aktuelle Datum aus-->
 
     <!-- entry list -->
-    <!---->
+    <!--v-if ist eine vue.js definition für if( If bedingung)-->
+    <!--Sagt: Wenn "Einträge" vorhanden sind und die Anzahl der Einträge größer als Null ist,
+    dann rendern Sie eine ungeordnete Liste mit der CSS-Klasse "entry-list":-->
     <ul v-if="entries && entries.length" class="entry-list" >
-      <li v-for="entry in entries" class="entry-item"  :key="entry.id">
+      
+      <li class="entry-item"  v-for="entry in entries" :key="entry.id">
+
+<!------------------------------------------------------------------------------------------------------------>
+      <!--Dieser Code durchläuft die Liste "entries" und rendert für jedes Element einen Listenpunkt (li)
+      mit der CSS-Klasse "entry-item". Der Schlüssel des Listenpunkts wird auf die ID des Eintrags gesetzt, 
+      um sicherzustellen, dass Vue.js jedes Element korrekt verfolgen kann. Der Inhalt des Listenpunkts wird nicht angezeigt, 
+      da er nicht Teil des Pseudocodes ist.-->
+
+      <!-- <li v-for="entry in entries" class="entry-item"  :key="entry.id">
         <span class="entry-daytime">{{entry[0] }} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
         <h3 class="entry-title">{{ entry[2]}}</h3>
-        <span class="entry-description">{{ entry[3]}}</span><br />
+        <span class="entry-description">{{ entry[3]}}</span><br />-->
+<!------------------------------------------------------------------------------------------------------------->
+
+        <EventEntry :entry="entry"/>
       </li>
     </ul>
 

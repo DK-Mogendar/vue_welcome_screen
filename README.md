@@ -23,6 +23,9 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+app.netlify.com Link:
+https://app.netlify.com/teams/dk-mogendar/overview
+
 Previue Project url:
 https://fluffy-gumdrop-9dd71c.netlify.app/
 

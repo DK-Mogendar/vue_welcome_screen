@@ -43,7 +43,7 @@ export default {
     return {
       title: "Welcome to Opportunity",
                     /*Meine Liste */                                         /*Chris Liste */
-      sheet_id:/*1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc*/ "1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
+      sheet_id:/*"1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc" */ "1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
       api_token:/*"AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE"*/"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
       currentDate: "",
       entries: []

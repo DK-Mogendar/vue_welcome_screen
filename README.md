@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Previue Project url:
+https://fluffy-gumdrop-9dd71c.netlify.app/

@@ -36,7 +36,7 @@
 <script>
 import axios from "axios"; //axios is a libary for making HTTP rquest to the backend
 
-
+//Definiert dei einzelnen Variablen der App
 export default {
   name: "App",
   data() {
@@ -58,28 +58,59 @@ export default {
 
   methods: {
     getData() {
+      /*BEGINN
+      FUNKTION getData()
+      Rufen Sie axios.get() mit this.gsheet_url als Argument auf.
+      Warted auf die Antwort.
+      Wenn die Antwort erfolgreich ist, dann
+      setze this.entries auf die Werte des ersten Wertebereichs in response.data
+      ENDWENN
+      ENDFUNKTION
+      END*/
       
         axios.get(this.gsheet_url).then((response) => {
           this.entries = response.data.valueRanges[0]. values;
         });
      
 
-/*      this.entries =  [
+      /*this.entries =  [
         ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
         ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
         ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
       ]; */
+
+    /*Beginn mit der
+    Funktion updateCurrentDate()
+    setze today auf ein neues Datum-Objekt
+    Inkementiere this.counter um 1
+    setze this.currentDate auf einen String, der das heutige Datum im Format "Tag.Monat.Jahr" darstellt
+    ENDFUNKTION
+    END*/ 
     },
     updateCurrentDate() {
       let today = new Date();
       this.counter++;
       this.currentDate = `${today.getDate()}.${today.getMonth() + 1}.${today.getFullYear()}`;
     },
+
+  /*Beginn mit der
+  Funktion refreshData()
+  ruf das updateCurrentDate() auf
+  ruf das getData() auf
+  ENDFUNKTION
+  END */  
     refreshData() {
       this.updateCurrentDate();
       this.getData();
     },
   },
+
+  /*Beginn mit der
+  Funktion mounted()
+  ruf das refreshData() auf, um die ersten Daten abzurufen und auf das nächste Update zu warten
+  seze den Intervall-Timer auf, der alle 18000000 Millisekunden die refreshData() Methode ausführt
+  ENDFUNKTION
+  END */
   mounted() {
     this.refreshData(); // get first initial data and then wait for the next
     setInterval(this.refreshData, 18000000); // wait one minute for next update (1000 * 60)

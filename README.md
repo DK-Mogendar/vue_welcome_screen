@@ -32,3 +32,6 @@ https://docs.google.com/spreadsheets/d/1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG
 link zu Liste Daniel:
 https://docs.google.com/spreadsheets/d/1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc/edit#gid=306128262
 
+Link zu Googel API Dienste:
+https://console.cloud.google.com/apis/credentials?project=vuewelcomescreen&supportedpurview=project
+

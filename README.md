@@ -1,26 +1,26 @@
-# your-project-name
-
-## Project setup
+# your-project-name / Mein Projekt Name
+vue_welcome_screen
+## Project setup /Projekt Setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development / Kompiliert und Hot-Reloads für die Entwicklung
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for production / Kompiliert und minimiert für die Produktion 
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Lints and fixes files / Lints und repariert Dateien
 ```
 npm run lint
 ```
 
-### Customize configuration
+### Customize configuration / Konfiguration anpassen
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 app.netlify.com Link:

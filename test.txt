@@ -1,4 +1,31 @@
 https://fluffy-gumdrop-9dd71c.netlify.app/
 
 
+<!------------------------------------------------------------------------------------------------------------>
+      <!--Dieser Code durchläuft die Liste "entries" und rendert für jedes Element einen Listenpunkt (li)
+      mit der CSS-Klasse "entry-item". Der Schlüssel des Listenpunkts wird auf die ID des Eintrags gesetzt, 
+      um sicherzustellen, dass Vue.js jedes Element korrekt verfolgen kann. Der Inhalt des Listenpunkts wird nicht angezeigt, 
+      da er nicht Teil des Pseudocodes ist.-->
+
+      <!-- <li v-for="entry in entries" class="entry-item"  :key="entry.id">
+        <span class="entry-daytime">{{entry[0] }} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
+        <h3 class="entry-title">{{ entry[2]}}</h3>
+        <span class="entry-description">{{ entry[3]}}</span><br />-->
+<!------------------------------------------------------------------------------------------------------------->
+<template>
+    <span class="entry-daytime">{{entry[0]}} Uhr, {{entry[1].replaceAll("/", ".")}}</span><br />
+    <h3 class="entry-title">{{entry[2]}}</h3>
+    <span class="entry-description">{{entry[3]}}</span><br />
+</template>
+
+<script>
+export default {
+  props: ['entry'],
+  data() {
+    return {
+      // counter: 0
+    }
+  }
+}
+</script>
 

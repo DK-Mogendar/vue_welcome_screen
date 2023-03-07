@@ -8,7 +8,6 @@
     <!--Sagt: Wenn "Einträge" vorhanden sind und die Anzahl der Einträge größer als Null ist,
     dann rendern Sie eine ungeordnete Liste mit der CSS-Klasse "entry-list":-->
     <ul v-if="entries && entries.length" class="entry-list" >
-      
       <li class="entry-item"  v-for="entry in entries" :key="entry.id">
         <EventEntry :entry="entry"/>
       </li>
@@ -47,7 +46,7 @@ export default {
     data() {
         return {
             title: "Welcome to Opportunity",
-            /*Meine Liste */ /*Chris Liste */
+                                 /*Meine Liste */                          /*Chris Liste */
             sheet_id: "1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc" /*"1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4"*/,
             api_token: "AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE" /*"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU"*/,
             currentDate: "",
@@ -66,37 +65,41 @@ export default {
         },
     },
     methods: {
-        getData() {
-            /*BEGINN
-            FUNKTION getData()
-            Rufen Sie axios.get() mit this.gsheet_url als Argument auf.
-            Warted auf die Antwort.
-            Wenn die Antwort erfolgreich ist, dann
-            setze this.entries auf die Werte des ersten Wertebereichs in response.data
-            ENDWENN
-            ENDFUNKTION
-            END*/
+        /*BEGINN
+        FUNKTION getData()
+        Rufen Sie axios.get() mit this.gsheet_url als Argument auf.
+        Warted auf die Antwort.
+        Wenn die Antwort erfolgreich ist, dann
+        setze this.entries auf die Werte des ersten Wertebereichs in response.data
+        ENDWENN
+        ENDFUNKTION
+        END*/
+        getData() {  
             axios.get(this.gsheet_url).then((response) => {
                 this.entries = response.data.valueRanges[0].values;
             });
-            /*this.entries =  [
-              ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
-              ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
-              ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
-            ]; */
-            /*Beginn mit der
-            Funktion updateCurrentDate()
-            setze today auf ein neues Datum-Objekt
-            Inkementiere this.counter um 1
-            setze this.currentDate auf einen String, der das heutige Datum im Format "Tag.Monat.Jahr" darstellt
-            ENDFUNKTION
-            END*/
         },
+        
+        /*this.entries =  [
+        ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
+        ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
+        ["19:25", "08/03.2023", "Coole sache zwei", "alles zu Cool zwei"]
+        ]; */
+        
+        /*Beginn mit der
+        Funktion updateCurrentDate()
+        setze today auf ein neues Datum-Objekt
+        Inkementiere this.counter um 1
+        setze this.currentDate auf einen String, der das heutige Datum im Format "Tag.Monat.Jahr" darstellt
+        ENDFUNKTION
+        END*/
+            
         updateCurrentDate() {
             let today = new Date();
             this.counter++;
             this.currentDate = `${today.getDate()}.${today.getMonth() + 1}.${today.getFullYear()}`;
         },
+
         /*Beginn mit der
         Funktion refreshData()
         ruf das updateCurrentDate() auf

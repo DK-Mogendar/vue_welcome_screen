@@ -65,8 +65,12 @@ export default {
         },
     },
     methods: {
-        /*BEGINN
-        FUNKTION getData()
+      
+
+        //Alte version
+
+        /*Beginn mit der
+        Funktion getData()
         Rufen Sie axios.get() mit this.gsheet_url als Argument auf.
         Warted auf die Antwort.
         Wenn die Antwort erfolgreich ist, dann
@@ -74,12 +78,55 @@ export default {
         ENDWENN
         ENDFUNKTION
         END*/
-        getData() {  
-            axios.get(this.gsheet_url).then((response) => {
-                this.entries = response.data.valueRanges[0].values;
+
+        /* getData() {  
+              axios.get(this.gsheet_url).then((response) => {
+                  this.entries = response.data.valueRanges[0].values;
+              });
+          },*/
+
+        //Neue Version mit sortierung na aubgelaufenen Datum un daussortierung
+
+        /*Beginn mit der
+        Funktion getData()
+        Rufen Sie axios.get() mit this.gsheet_url als Argument auf.
+        Warted auf die Antwort.
+        Wenn die Antwort erfolgreich ist, dann
+        setze this.entries auf die Werte des ersten Wertebereichs in response.data
+        ENDWENN
+        ENDFUNKTION
+        END*/
+        getData() {
+          axios.get(this.gsheet_url).then((response) => {
+            // Erhalte die Zeilen aus der Antwort des API-Aufrufs
+            const rows = response.data.valueRanges[0].values;
+            // Erhalte das aktuelle Datum
+            const currentDate = new Date();
+            // Filtere die Zeilen, die ein Datum haben, das heute oder später ist
+            const filteredRows = rows.filter(row => {
+              // Zerlege das Datum in seine Teile
+              const dateParts = row[1].split("/");
+              // Erstelle ein neues Datum aus den Datumsteilen
+              const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+              // Vergleiche das neue Datum mit dem aktuellen Datum und gib das Ergebnis zurück
+              return rowDate >= currentDate;
             });
+             // Sortiere die gefilterten Zeilen nach Datum
+            this.entries = filteredRows.sort((row1, row2) => {
+              // Zerlege die Datumsteile des ersten Datums (uhr Zeit)in row1
+              const dateParts1 = row1[1].split("/");
+              // Zerlege die Datumsteile des zweiten Datums (Kalender) in row2
+              const dateParts2 = row2[1].split("/");
+              // Erstelle neue Datumobjekte aus den Datumsteilen beider Zeilen
+              const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
+              const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
+              // Vergleiche die Datumobjekte und gib das Ergebnis zurück
+              return date1 - date2;
+            });
+          });
         },
         
+        //Altes Beispiel hier scheiben wie das Datum und die Uhrzeit als Numerischen String(Kein richtiges Datum)
         /*this.entries =  [
         ["8:25", "08/09/2022", "Auaaa wirklich", "Alles zum thema Auaaaaaa"],
         ["17:25", "07/03.2023", "Coole sache", "alles zu Cool"],
@@ -92,8 +139,7 @@ export default {
         Inkementiere this.counter um 1
         setze this.currentDate auf einen String, der das heutige Datum im Format "Tag.Monat.Jahr" darstellt
         ENDFUNKTION
-        END*/
-            
+        END*/     
         updateCurrentDate() {
             let today = new Date();
             this.counter++;
@@ -125,7 +171,7 @@ export default {
 </script>
 
 <style>
-
+/* Importiert die Schrift art */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22");
 
 body{
@@ -135,7 +181,6 @@ background-color:#e8eff4;
   font-family: "inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*color: #323d4a;*/
   margin: 30px;
 }
 

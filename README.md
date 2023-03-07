@@ -26,7 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 app.netlify.com Link:
 https://app.netlify.com/teams/dk-mogendar/overview
 
-Previue Project url:
+Projekt asicht netlify url:
 https://fluffy-gumdrop-9dd71c.netlify.app/
 
 Link zu Liste von Chris:

@@ -5,10 +5,10 @@
 
     <!-- entry list -->
     <!--v-if ist eine vue.js definition für if( If bedingung)-->
-    <!--Sagt: Wenn "Einträge" vorhanden sind und die Anzahl der Einträge größer als Null ist,
-    dann rendern Sie eine ungeordnete Liste mit der CSS-Klasse "entry-list":-->
+    <!-- Schleife durch alle Einträge in entries -->
     <ul v-if="entries && entries.length" class="entry-list" >
       <li class="entry-item"  v-for="entry in entries" :key="entry.id">
+        <!-- Rendere einen einzelnen Eintrag mit dem EventEntry-Komponenten-Tag -->
         <EventEntry :entry="entry"/>
       </li>
     </ul>
@@ -65,8 +65,6 @@ export default {
         },
     },
     methods: {
-      
-
         //Alte version
 
         /*Beginn mit der
@@ -83,7 +81,7 @@ export default {
               axios.get(this.gsheet_url).then((response) => {
                   this.entries = response.data.valueRanges[0].values;
               });
-          },*/
+        },*/
 
         //Neue Version mit sortierung na aubgelaufenen Datum un daussortierung
 

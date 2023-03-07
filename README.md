@@ -38,3 +38,9 @@ https://docs.google.com/spreadsheets/d/1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgE
 Link zu Googel API Dienste:
 https://console.cloud.google.com/apis/credentials?project=vuewelcomescreen&supportedpurview=project
 
+Retrospektieve:
+
+https://miro.com/welcomeonboard/QVhLdVVrS25Tbm95YlI5bTVtRDdBVWVtUWNEbGJyVlFDWEpRNzdFa3A3SHFRU1l6MG5uZ3lYNlpTVUVnbzBHWXwzNDU4NzY0NTQxMDIyOTY2NjEwfDI=?share_link_id=60714375042
+
+
+

@@ -248,7 +248,7 @@ und die align-items auf center, wenn die Bildschirmbreite 768px oder weniger bet
 Der padding wird auch auf 20px reduziert. Die Höhe des Bildes wird ebenfalls auf 30px reduziert.*/
 
 @media screen and (max-width: 768px) {
-  .footer {
+  .footer.site-title.site-description{
     flex-direction: column;
     align-items: center;
     padding: 20px;

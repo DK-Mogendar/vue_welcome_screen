@@ -37,7 +37,7 @@
 
 <script>
 import axios from "axios"; //axios ist eine Bibliothek zum Erstellen von HTTP-Anforderungen an das Backend. Bindet eine solche ein.
-import EventEntry from "./components/EventEntry.vue";
+import EventEntry from "./components/EventEntry.vue"; //bindet EventEntry ein aus der Datei"./components/EventEntry.vue"
 
 //Definiert dei einzelnen Variablen der App
 export default {
@@ -243,12 +243,12 @@ background-color:#e8eff4;
 .footer img {
   height: 50px;
 }
+
 /*In diesem Beispiel wird der flex-direction des .footer auf column geändert, 
 und die align-items auf center, wenn die Bildschirmbreite 768px oder weniger beträgt. 
 Der padding wird auch auf 20px reduziert. Die Höhe des Bildes wird ebenfalls auf 30px reduziert.*/
-
 @media screen and (max-width: 768px) {
-  .footer.site-title.site-description{
+  .footer.site-title.site-description {
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -259,4 +259,4 @@ Der padding wird auch auf 20px reduziert. Die Höhe des Bildes wird ebenfalls au
   }
 }
 
-</style>§
+</style>

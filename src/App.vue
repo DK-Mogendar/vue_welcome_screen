@@ -47,8 +47,8 @@ export default {
         return {
             title: "Welcome to Opportunity",
                                  /*Meine Liste */                          /*Chris Liste */
-            sheet_id: "1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc" /*"1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4"*/,
-            api_token: "AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE" /*"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU"*/,
+            sheet_id: "1ycTdsvR4P08qDw9p0rmN73rqtqdXGdwxYDLKEGgEnpc" /*"1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4"*/,// Ist die Id der Seite die die Daten zur verfügung stellt
+            api_token: "AIzaSyAcQYdWwMV5KCzZIKI-gozSS9osnZ5CQsE" /*"AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU"*/,          //Ist der api Schlüssel der von Googel Cloud API Dienste bereitgestellt wird siehe 
             currentDate: "",
             entries: []
         };
@@ -146,8 +146,8 @@ export default {
 
         /*Beginn mit der
         Funktion refreshData()
-        ruf das updateCurrentDate() auf
-        ruf das getData() auf
+        ruf das updateCurrentDate() 
+        und getData() auf
         ENDFUNKTION
         END */
         refreshData() {
@@ -177,7 +177,10 @@ background-color:#e8eff4;
 }
 #app {
   font-family: "inter", Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  /*Wenn Text auf einem Bildschirm angezeigt wird, können die Kanten der Buchstaben uneben oder pixelig erscheinen. 
+  Dies ist besonders bei hochauflösenden Displays bemerkbar. 
+  Die Font-Smoothing-Eigenschaften sollen die Kanten des Textes glätten, um ihn lesbarer und ansprechender zu machen. */
+  -webkit-font-smoothing: antialiased;/* */
   -moz-osx-font-smoothing: grayscale;
   margin: 30px;
 }

@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import axios from "axios"; //axios is a libary for making HTTP rquest to the backend
+import axios from "axios"; //axios ist eine Bibliothek zum Erstellen von HTTP-Anforderungen an das Backend. Bindet eine solche ein.
 import EventEntry from "./components/EventEntry.vue";
 
 //Definiert dei einzelnen Variablen der App
@@ -180,7 +180,7 @@ background-color:#e8eff4;
   /*Wenn Text auf einem Bildschirm angezeigt wird, können die Kanten der Buchstaben uneben oder pixelig erscheinen. 
   Dies ist besonders bei hochauflösenden Displays bemerkbar. 
   Die Font-Smoothing-Eigenschaften sollen die Kanten des Textes glätten, um ihn lesbarer und ansprechender zu machen. */
-  -webkit-font-smoothing: antialiased;/* */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 30px;
 }
@@ -206,6 +206,7 @@ background-color:#e8eff4;
 .entry-item {
   padding: 35px 40px;
   margin: 40px 0;
+  margin-bottom: 40px;
   background: #0f05a0;
   font-size: 28px;
   line-height: 1.3;
@@ -222,13 +223,14 @@ background-color:#e8eff4;
   margin: 0;
   color: #ffbfab;
   font-weight: 900;
+
 }
 
 .entry-description {
   color: #ffbfab;
 }
 .footer {
-  display: flex;
+  display:inline-flex;
   justify-content: space-between;
   box-sizing: border-box;
   position: fixed;
@@ -240,6 +242,21 @@ background-color:#e8eff4;
   }
 .footer img {
   height: 50px;
+}
+/*In diesem Beispiel wird der flex-direction des .footer auf column geändert, 
+und die align-items auf center, wenn die Bildschirmbreite 768px oder weniger beträgt. 
+Der padding wird auch auf 20px reduziert. Die Höhe des Bildes wird ebenfalls auf 30px reduziert.*/
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .footer img {
+    height: 30px;
+  }
 }
 
 </style>§
